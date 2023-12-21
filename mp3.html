@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mp3 player</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MP3 Player</title>
+  <style>
+    #player-container {
+      max-width: 400px;
+      margin: auto;
+      text-align: center;
+      padding: 20px;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="player-container">
+  <label for="mp3-file">Select MP3 File:</label>
+  <input type="file" id="mp3-file" accept=".mp3">
+
+  <br><br>
+
+  <audio id="audio-player" controls>
+    Your browser does not support the audio element.
+  </audio>
+
+  <br><br>
+
+  <label for="repeat">Repeat:</label>
+  <input type="checkbox" id="repeat">
+
+  <br><br>
+
+  <label for="speed">Speed:</label>
+  <input type="number" id="speed" value="1" step="0.1">
+
+  <br><br>
+
+  <label for="volume">Volume:</label>
+  <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+</div>
+
+<script>
+  const audioPlayer = document.getElementById('audio-player');
+  const mp3FileInput = document.getElementById('mp3-file');
+  const repeatCheckbox = document.getElementById('repeat');
+  const speedInput = document.getElementById('speed');
+  const volumeInput = document.getElementById('volume');
+
+  mp3FileInput.addEventListener('change', function() {
+    const selectedFile = mp3FileInput.files[0];
+    const objectURL = URL.createObjectURL(selectedFile);
+    audioPlayer.src = objectURL;
+  });
+
+  repeatCheckbox.addEventListener('change', function() {
+    audioPlayer.loop = repeatCheckbox.checked;
+  });
+
+  speedInput.addEventListener('input', function() {
+    audioPlayer.playbackRate = parseFloat(speedInput.value);
+  });
+
+  volumeInput.addEventListener('input', function() {
+    audioPlayer.volume = parseFloat(volumeInput.value);
+  });
+</script>
+
+</body>
+</html>
+
+
+
+<hr>
+<p>mp3 player Function</p>
+<ui>
+  <li>Repeated play, volume, speed possible</li>
+    <li>I can play ogg.mp4 without mp3 (I don't know some music file names)</li>
+</ui>
+
+<hr>
+
+<a href="home.html">go back</a>
+
+  <link rel="stylesheet" href="style.css">

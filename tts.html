@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>tts</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Project -->
+  <script src="main.js"></script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TTS</title>
+</head>
+<body>
+  <h1>tts</h1>
+  <textarea id="textToSpeak" rows="4" cols="50"></textarea>
+  <button onclick="speakText()">Speak</button>
+
+  <script>
+    function speakText() {
+      const textToSpeak = document.getElementById("textToSpeak").value;
+
+      // Check if the browser supports the SpeechSynthesis API
+      if ('speechSynthesis' in window) {
+        const synth = window.speechSynthesis;
+        const utterance = new SpeechSynthesisUtterance(textToSpeak);
+
+        // Optional: Set additional properties for the voice, rate, pitch, etc.
+        // utterance.voice = ...;
+        // utterance.rate = ...;
+        // utterance.pitch = ...;
+
+        synth.speak(utterance);
+      } else {
+        alert("Your browser doesn't support tts.");
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+<hr>
+
+<p>What is tts?</p>
+
+<ui>
+  <li>tts is an abbreviation for Text to Speech tts. It is a voice that enters the device. In Korean, it is called voice synthesis.</li>
+</ui>
+
+<hr>
+
+<a href="home.html">go back</a>
+
+
+
+<p>Easter Egg Found! Translate it into Korean in tts and it comes out ㅜㅜ bro wtf
+
